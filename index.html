@@ -2,318 +2,234 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les Mecs Chills - Serveur Discord</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --chill-dark-bg: #2c2f33;
-      --chill-medium-bg: #36393f;
-      --chill-text: #ffffff;
-      --chill-blue: #7289da;
-      --chill-blue-hover: #677bc4;
-      --chill-green: #43b581;
-      --chill-red: #f04747;
-    }
-    body { font-family: 'Inter', Arial, sans-serif; background: var(--chill-dark-bg); color: var(--chill-text); margin: 0; padding-top: 60px; scroll-behavior: smooth; }
-    nav.navbar { position: fixed; top:0; left:0; width:100%; height:60px; background: var(--chill-medium-bg); display:flex; align-items:center; padding:0 20px; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.5);}
-    .navbar-logo { font-size:1.5rem; font-weight:bold; color: var(--chill-text); text-decoration:none; margin-right:30px;}
-    .navbar a { color: var(--chill-text); text-decoration:none; padding:10px 15px; margin:0 5px; border-radius:5px; transition: background 0.2s;}
-    .navbar a:hover, .navbar a.active { background: var(--chill-blue-hover);}
-    section { max-width:900px; margin:30px auto; padding:20px; background: var(--chill-medium-bg); border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.3);}
-    h2,h3,h4 { color: var(--chill-text);}
-    .lmc-form { padding:20px;}
-    .form-group { margin-bottom:15px;}
-    .form-group label { display:block; margin-bottom:5px; font-weight:600; }
-    .form-group input[type="text"], .form-group input[type="number"], .form-group select, .form-group textarea { width:100%; padding:10px; border:1px solid #4f545c; background:#40444b; color: var(--chill-text); border-radius:4px; box-sizing:border-box;}
-    .form-group textarea { resize: vertical; }
-    .lmc-button { padding:10px 20px; border:none; border-radius:4px; cursor:pointer; font-weight:600; transition: background 0.2s;}
-    .lmc-button.primary { background: var(--chill-blue); color: var(--chill-text);}
-    .lmc-button.primary:hover { background: var(--chill-blue-hover);}
-    .form-message { margin-top:10px; font-size:0.9em;}
-    .hidden { display:none !important;}
-    .game-card { background:#40444b; padding:15px; margin-bottom:20px; border-radius:6px;}
-    .application-card { background:#2f3136; padding:10px; margin-bottom:10px; border-radius:6px;}
+    body {margin:0;font-family:'Poppins',sans-serif;background:#0d0d1a;color:white;}
+    header {position:fixed;top:0;width:100%;background:#111;padding:15px;display:flex;justify-content:center;gap:20px;z-index:1000;}
+    header a {color:white;text-decoration:none;font-weight:bold;transition:0.3s;}
+    header a:hover {color:#7f5af0;text-shadow:0 0 10px #7f5af0;}
+    section {min-height:100vh;padding:100px 20px;text-align:center;}
+    h1,h2 {color:#7f5af0;}
+    button {padding:10px 20px;border:none;border-radius:8px;background:#7f5af0;color:white;cursor:pointer;transition:0.3s;}
+    button:hover {background:#5a38c9;box-shadow:0 0 15px #7f5af0;}
+    .card {background:#1a1a2e;padding:20px;border-radius:12px;margin:20px auto;max-width:600px;}
+    .hidden {display:none;}
+    input,textarea {padding:10px;border:none;border-radius:6px;margin:5px;width:80%;max-width:400px;}
+    .game-area {margin:20px auto;max-width:600px;}
+    .suggestion {background:#222;padding:10px;border-radius:6px;margin:5px;}
+    .admin-section {background:#111;padding:20px;border-radius:12px;margin-top:20px;}
+    .admin-msg {background:#333;padding:10px;margin:5px;border-radius:6px;text-align:left;}
+    #chatBox {max-height:200px;overflow-y:auto;background:#222;padding:10px;border-radius:8px;}
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <a href="#accueil" class="navbar-logo">Les Mecs Chills</a>
-    <div>
-      <a href="#accueil">Accueil</a>
-      <a href="#about">À propos</a>
-      <a href="#games">Jeux & Quiz</a>
-      <a href="#roles">Rôles</a>
-      <a href="#events">Événements</a>
-      <a href="#community">Communauté</a>
-      <a href="#contact">Contact</a>
-      <a href="#recruitment">Recrutement</a>
-      <a href="#adminPanel">Admin</a>
-    </div>
-  </nav>
+<header>
+  <a href="#accueil">Accueil</a>
+  <a href="#apropos">À propos</a>
+  <a href="#roles">Rôles</a>
+  <a href="#events">Événements</a>
+  <a href="#commu">Communauté</a>
+  <a href="#jeux">Jeux</a>
+  <a href="#contact">Suggestions</a>
+  <a href="#aide">Aide</a>
+  <a href="#admin">Admin</a>
+</header>
 
-  <!-- Accueil -->
-  <section id="accueil">
-    <h2>JUSTE DES MECS CHILLS EN FAIT !</h2>
-    <a href="https://discord.gg/wUtq5ZA9Kt" class="lmc-button primary">Rejoindre le serveur</a>
-  </section>
+<section id="accueil">
+  <h1>JUSTE DES MECS CHILLS EN FAIT !</h1>
+  <p>Rejoins-nous pour des moments funs et chill 🌌</p>
+  <a href="https://discord.gg/wUtq5ZA9Kt"><button>Rejoindre le serveur</button></a>
+</section>
 
-  <!-- À propos -->
-  <section id="about">
-    <h2>À propos</h2>
-    <p>Notre serveur Discord est un espace où règnent la bonne humeur, le respect et l’amitié. Chaque membre compte et a son rôle à jouer dans la communauté. Ici, tu peux discuter, partager et surtout t’amuser sans prise de tête !</p>
-  </section>
+<section id="apropos">
+  <h2>À propos</h2>
+  <p>Notre serveur Discord est un espace où règnent la bonne humeur, le respect et l’amitié. Chaque membre compte et a son rôle à jouer.</p>
+</section>
 
-  <!-- Jeux & Quiz -->
-  <section id="games">
-    <h2>Jeux & Quiz Culturels 🎮</h2>
-    <div class="game-card">
-      <h3>Quiz Culturel</h3>
-      <p>Testez vos connaissances générales !</p>
-      <div id="quizContainer"></div>
-    </div>
+<section id="roles">
+  <h2>Rôles exclusifs</h2>
+  <p>Chaque jour, récupère des rôles uniques 🎭</p>
+  <div class="card">
+    <h3>Demande rapide (modo, journaliste)</h3>
+    <input id="quickPseudo" placeholder="Ton pseudo">
+    <select id="quickRole">
+      <option value="modérateur">Modérateur</option>
+      <option value="journaliste">Journaliste</option>
+    </select><br>
+    <button onclick="sendQuickRole()">Envoyer</button>
+  </div>
+  <div class="card">
+    <h3>Demande avancée (autres rôles)</h3>
+    <input id="advPseudo" placeholder="Pseudo"><br>
+    <input id="advAge" placeholder="Âge"><br>
+    <input id="advExp" placeholder="Expérience Discord"><br>
+    <input id="advTime" placeholder="Heures/jour"><br>
+    <textarea id="advMotiv" placeholder="Ta lettre de motivation"></textarea><br>
+    <button onclick="sendAdvancedRole()">Envoyer</button>
+  </div>
+</section>
 
-    <div class="game-card">
-      <h3>Devine le Nombre</h3>
-      <p>Choisissez votre pseudo et essayez de deviner le nombre mystère entre 1 et 50 !</p>
-      <input type="text" id="guessPseudo" placeholder="Pseudo">
-      <input type="number" id="guessNumber" min="1" max="50" placeholder="Votre nombre">
-      <button class="lmc-button primary" id="guessBtn">Jouer</button>
-      <p id="guessResult"></p>
-    </div>
-  </section>
+<section id="events">
+  <h2>Événements</h2>
+  <p>Tournois, soirées chill et concours 🎉</p>
+</section>
 
-  <!-- Rôles -->
-  <section id="roles">
-    <h2>Rôles Exclusifs</h2>
-    <form id="roleRequestForm" class="lmc-form">
-      <div class="form-group">
-        <label for="role_pseudo">Pseudo Discord</label>
-        <input type="text" id="role_pseudo" required>
-      </div>
-      <div class="form-group">
-        <label for="role_type">Rôle souhaité</label>
-        <select id="role_type" required>
-          <option value="" disabled selected>Choisir un rôle</option>
-          <option value="moderator">Modérateur</option>
-          <option value="journalist">Journaliste</option>
-          <option value="beta">Beta Testeur</option>
-        </select>
-      </div>
-      <button type="submit" class="lmc-button primary">Demander Rôle</button>
-      <p id="roleMsg"></p>
-    </form>
-  </section>
+<section id="commu">
+  <h2>Communauté</h2>
+  <p>Chacun a sa place ici 🤝</p>
+</section>
 
-  <!-- Événements -->
-  <section id="events">
-    <h2>Événements</h2>
-    <p>Tournois, soirées chill, concours fun, et bien plus encore !</p>
-  </section>
+<section id="jeux">
+  <h2>Mini-jeux 🎮</h2>
+  <div class="card game-area">
+    <h3>Quiz culture générale</h3>
+    <input id="quizPseudo" placeholder="Ton pseudo"><br>
+    <p id="q">Quelle est la capitale du Japon ?</p>
+    <input id="a" placeholder="Ta réponse">
+    <button onclick="quiz()">Répondre</button>
+    <p id="quizResult"></p>
+  </div>
+  <div class="card game-area">
+    <h3>Pierre-Feuille-Ciseaux</h3>
+    <input id="pfcPseudo" placeholder="Ton pseudo"><br>
+    <button onclick="pfc('pierre')">Pierre</button>
+    <button onclick="pfc('feuille')">Feuille</button>
+    <button onclick="pfc('ciseaux')">Ciseaux</button>
+    <p id="pfcResult"></p>
+  </div>
+</section>
 
-  <!-- Communauté -->
-  <section id="community">
-    <h2>Communauté</h2>
-    <p>Chaque membre a son importance. Partage ton énergie et contribue au serveur !</p>
-  </section>
+<section id="contact">
+  <h2>Suggestions</h2>
+  <textarea id="suggestionInput" placeholder="Ta suggestion"></textarea><br>
+  <button onclick="addSuggestion()">Envoyer</button>
+  <div id="suggestionsList"></div>
+</section>
 
-  <!-- Contact / Suggestions -->
-  <section id="contact">
-    <h2>Contact / Suggestions</h2>
-    <form id="contactForm" class="lmc-form">
-      <div class="form-group">
-        <label for="contactPseudo">Pseudo Discord</label>
-        <input type="text" id="contactPseudo" required>
-      </div>
-      <div class="form-group">
-        <label for="contactMessage">Message / Suggestion</label>
-        <textarea id="contactMessage" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="lmc-button primary">Envoyer</button>
-      <p id="contactMsg"></p>
-    </form>
-  </section>
+<section id="aide">
+  <h2>Aide</h2>
+  <textarea id="helpInput" placeholder="Décris ton problème..."></textarea><br>
+  <button onclick="sendHelp()">Signaler</button>
+</section>
 
-  <!-- Recrutement -->
-  <section id="recruitment">
-    <h2>📋 Questionnaire de Recrutement</h2>
-    <form id="recruitmentForm" class="lmc-form">
-      <div class="form-group">
-        <label for="r_pseudo">Pseudo Discord</label>
-        <input type="text" id="r_pseudo" required>
-      </div>
-      <div class="form-group">
-        <label for="r_age">Âge</label>
-        <input type="number" id="r_age" min="13" max="99" required>
-      </div>
-      <div class="form-group">
-        <label for="r_experience">Expérience Discord</label>
-        <input type="text" id="r_experience" required>
-      </div>
-      <div class="form-group">
-        <label for="r_hours">Disponibilité (h/semaine)</label>
-        <input type="number" id="r_hours" required>
-      </div>
-      <div class="form-group">
-        <label for="r_motivation">Motivation</label>
-        <textarea id="r_motivation" rows="6" maxlength="2000" required></textarea>
-      </div>
-      <button type="submit" class="lmc-button primary">Envoyer ma candidature</button>
-      <p id="recruitmentMessage"></p>
-    </form>
-  </section>
+<section id="admin">
+  <h2>Admin Panel 🔐</h2>
+  <input type="password" id="adminPass" placeholder="Mot de passe">
+  <button onclick="loginAdmin()">Entrer</button>
 
-  <!-- Admin Panel -->
-  <section id="adminPanel" class="hidden">
-    <h2>🛠 Panneau Admin</h2>
-    <div id="adminContent">
-      <h3>Suggestions</h3>
-      <div id="adminSuggestions"></div>
+  <div id="adminArea" class="hidden admin-section">
+    <h3>Suggestions</h3>
+    <div id="adminSuggestions"></div>
 
-      <h3>Candidatures</h3>
-      <div id="recruitList"></div>
+    <h3>Demandes de rôles</h3>
+    <div id="adminRoles"></div>
 
-      <h3>Rôles demandés</h3>
-      <div id="adminRoles"></div>
-    </div>
-  </section>
+    <h3>Aide signalée</h3>
+    <div id="adminHelp"></div>
 
-  <script>
-    // --- Quiz Culturel ---
-    const quizCulture = {
-      quizId:"culture_01",
-      title:"Quiz Culturel",
-      description:"Teste tes connaissances générales !",
-      questions:[
-        {q:"La tour Eiffel se trouve à ?", choices:["Londres","Paris","Berlin","Madrid"], answer:1},
-        {q:"Capitale du Japon ?", choices:["Seoul","Tokyo","Beijing","Bangkok"], answer:1},
-        {q:"Couleur du cheval blanc d'Henri IV ?", choices:["Blanc","Noir","Marron","Gris"], answer:0}
-      ]
-    };
-    let currentQuiz = null;
-    function renderQuizJSON(quizJson, containerId){
-      currentQuiz=quizJson;
-      const container=document.getElementById(containerId);
-      if(!container)return false;
-      let html=`<h4>${quizJson.title}</h4><p>${quizJson.description}</p>`;
-      quizJson.questions.forEach((q,i)=>{
-        html+=`<div><p><strong>Q${i+1}:</strong> ${q.q}</p>`;
-        q.choices.forEach((c,ci)=>{
-          html+=`<label><input type="radio" name="q_${i}" value="${ci}">${c}</label>`;
-        });
-        html+="</div>";
-      });
-      html+=`<button onclick="submitQuiz('${quizJson.quizId}')">Soumettre</button><div id="quizResult"></div>`;
-      container.innerHTML=html; return true;
-    }
-    function submitQuiz(quizId){
-      if(!currentQuiz || currentQuiz.quizId!==quizId)return;
-      let score=0;
-      currentQuiz.questions.forEach((q,i)=>{
-        const choice=document.querySelector(`input[name="q_${i}"]:checked`);
-        if(choice && parseInt(choice.value)===q.answer) score++;
-      });
-      document.getElementById("quizResult").innerHTML=`Résultat: ${score}/${currentQuiz.questions.length}`;
-    }
-    renderQuizJSON(quizCulture,"quizContainer");
+    <h3>Réponses aux membres</h3>
+    <textarea id="infoResponse" placeholder="Message d'aide..."></textarea><br>
+    <button onclick="postInfo()">Publier</button>
+    <div id="infoList"></div>
 
-    // --- Devine le Nombre ---
-    let secretNumber = Math.floor(Math.random()*50)+1;
-    document.getElementById("guessBtn").addEventListener("click",()=>{
-      const pseudo=document.getElementById("guessPseudo").value.trim();
-      const guess=parseInt(document.getElementById("guessNumber").value);
-      const result=document.getElementById("guessResult");
-      if(!pseudo || !guess) return result.textContent="Remplis tout !";
-      if(guess===secretNumber) result.textContent=`Bravo ${pseudo}, tu as trouvé le nombre mystère !`; 
-      else result.textContent=guess<secretNumber? "Trop petit":"Trop grand";
-    });
+    <h3>Salle de réunion</h3>
+    <div id="chatBox"></div>
+    <input id="chatInput" placeholder="Message admin...">
+    <button onclick="sendChat()">Envoyer</button>
+  </div>
+</section>
 
-    // --- Formulaire Contact / Suggestions ---
-    const contactForm=document.getElementById("contactForm");
-    contactForm.addEventListener("submit",(e)=>{
-      e.preventDefault();
-      const pseudo=document.getElementById("contactPseudo").value.trim();
-      const msg=document.getElementById("contactMessage").value.trim();
-      let suggestions=JSON.parse(localStorage.getItem("lmc_suggestions"))||[];
-      suggestions.push({pseudo,msg});
-      localStorage.setItem("lmc_suggestions",JSON.stringify(suggestions));
-      document.getElementById("contactMsg").textContent="✅ Envoyé!";
-      contactForm.reset(); renderAdmin();
-    });
+<script>
+  // Stockage
+  let suggestions = JSON.parse(localStorage.getItem("suggestions")||"[]");
+  let roles = JSON.parse(localStorage.getItem("roles")||"[]");
+  let helps = JSON.parse(localStorage.getItem("helps")||"[]");
+  let infos = JSON.parse(localStorage.getItem("infos")||"[]");
+  let chat = JSON.parse(localStorage.getItem("chat")||"[]");
 
-    // --- Formulaire Rôle ---
-    document.getElementById("roleRequestForm").addEventListener("submit",(e)=>{
-      e.preventDefault();
-      const pseudo=document.getElementById("role_pseudo").value.trim();
-      const role=document.getElementById("role_type").value;
-      let roles=JSON.parse(localStorage.getItem("lmc_roles"))||[];
-      roles.push({pseudo,role});
-      localStorage.setItem("lmc_roles",JSON.stringify(roles));
-      document.getElementById("roleMsg").textContent="✅ Demande envoyée!";
-      document.getElementById("roleRequestForm").reset(); renderAdmin();
-    });
+  // Suggestions
+  function addSuggestion(){
+    let text=document.getElementById("suggestionInput").value;
+    if(!text) return;
+    suggestions.push(text);
+    localStorage.setItem("suggestions",JSON.stringify(suggestions));
+    renderSuggestions();
+  }
+  function renderSuggestions(){
+    document.getElementById("suggestionsList").innerHTML=suggestions.map(s=>`<div class="suggestion">${s}</div>`).join("");
+    document.getElementById("adminSuggestions").innerHTML=suggestions.map((s,i)=>`<div>${s} <button onclick="delSug(${i})">❌</button></div>`).join("");
+  }
+  function delSug(i){suggestions.splice(i,1);localStorage.setItem("suggestions",JSON.stringify(suggestions));renderSuggestions();}
+  
+  // Roles
+  function sendQuickRole(){
+    let p=document.getElementById("quickPseudo").value;
+    let r=document.getElementById("quickRole").value;
+    roles.push({pseudo:p,role:r,type:"rapide"});
+    localStorage.setItem("roles",JSON.stringify(roles));
+    renderRoles();
+  }
+  function sendAdvancedRole(){
+    let role={pseudo:advPseudo.value,age:advAge.value,exp:advExp.value,time:advTime.value,motiv:advMotiv.value,type:"avancé"};
+    roles.push(role);
+    localStorage.setItem("roles",JSON.stringify(roles));
+    renderRoles();
+  }
+  function renderRoles(){
+    document.getElementById("adminRoles").innerHTML=roles.map(r=>`<div>${r.pseudo} - ${r.role||"autre"} (${r.type})</div>`).join("");
+  }
 
-    // --- Formulaire Recrutement ---
-    document.getElementById("recruitmentForm").addEventListener("submit",(e)=>{
-      e.preventDefault();
-      const data={
-        pseudo:document.getElementById("r_pseudo").value.trim(),
-        age:document.getElementById("r_age").value,
-        experience:document.getElementById("r_experience").value.trim(),
-        hours:document.getElementById("r_hours").value,
-        motivation:document.getElementById("r_motivation").value.trim()
-      };
-      let recruits=JSON.parse(localStorage.getItem("lmc_recruits"))||[];
-      recruits.push(data);
-      localStorage.setItem("lmc_recruits",JSON.stringify(recruits));
-      document.getElementById("recruitmentMessage").textContent="✅ Candidature envoyée!";
-      document.getElementById("recruitmentForm").reset();
-      renderAdmin();
-    });
+  // Help
+  function sendHelp(){
+    let h=document.getElementById("helpInput").value;
+    helps.push(h);
+    localStorage.setItem("helps",JSON.stringify(helps));
+    renderHelps();
+  }
+  function renderHelps(){
+    document.getElementById("adminHelp").innerHTML=helps.map(h=>`<div>${h}</div>`).join("");
+  }
 
-    // --- Admin ---
-    const adminPanel=document.getElementById("adminPanel");
-    const adminPassword="89mLh21"; // Non affiché UI
-    function renderAdmin(){
-      // Suggestions
-      const suggestions=JSON.parse(localStorage.getItem("lmc_suggestions"))||[];
-      const suggDiv=document.getElementById("adminSuggestions");
-      suggDiv.innerHTML="";
-      suggestions.forEach((s,i)=>{
-        const div=document.createElement("div"); div.className="application-card";
-        div.innerHTML=`<p><b>${s.pseudo}:</b> ${s.msg}</p>`;
-        suggDiv.appendChild(div);
-      });
+  // Infos
+  function postInfo(){
+    infos.push(infoResponse.value);
+    localStorage.setItem("infos",JSON.stringify(infos));
+    renderInfos();
+  }
+  function renderInfos(){
+    document.getElementById("infoList").innerHTML=infos.map(i=>`<div class="suggestion">${i}</div>`).join("");
+  }
 
-      // Recruits
-      const recruits=JSON.parse(localStorage.getItem("lmc_recruits"))||[];
-      const recruitDiv=document.getElementById("recruitList");
-      recruitDiv.innerHTML="";
-      recruits.forEach(r=>{
-        const div=document.createElement("div"); div.className="application-card";
-        div.innerHTML=`<h4>${r.pseudo} (Âge: ${r.age})</h4>
-                       <p><b>Exp:</b> ${r.experience}</p>
-                       <p><b>H/semaine:</b> ${r.hours}</p>
-                       <p><b>Motivation:</b> ${r.motivation}</p>`;
-        recruitDiv.appendChild(div);
-      });
+  // Chat admin
+  function sendChat(){
+    let msg=document.getElementById("chatInput").value;
+    chat.push(msg);
+    localStorage.setItem("chat",JSON.stringify(chat));
+    renderChat();
+  }
+  function renderChat(){
+    document.getElementById("chatBox").innerHTML=chat.map(c=>`<div class="admin-msg">${c}</div>`).join("");
+  }
 
-      // Roles
-      const roles=JSON.parse(localStorage.getItem("lmc_roles"))||[];
-      const roleDiv=document.getElementById("adminRoles");
-      roleDiv.innerHTML="";
-      roles.forEach(r=>{
-        const div=document.createElement("div"); div.className="application-card";
-        div.innerHTML=`<p><b>${r.pseudo}:</b> ${r.role}</p>`;
-        roleDiv.appendChild(div);
-      });
-    }
+  // Admin login
+  function loginAdmin(){
+    if(adminPass.value==="89mLh21"){
+      document.getElementById("adminArea").classList.remove("hidden");
+      renderSuggestions();renderRoles();renderHelps();renderInfos();renderChat();
+    } else {alert("Mot de passe incorrect !")}
+  }
 
-    // Pour démo: afficher admin automatiquement
-    adminPanel.classList.remove("hidden");
-    renderAdmin();
-  </script>
+  // Jeux
+  function quiz(){
+    let ans=document.getElementById("a").value.toLowerCase();
+    quizResult.innerText=(ans==="tokyo")?"Bravo 🎉":"Raté 😅";
+  }
+  function pfc(choice){
+    let options=["pierre","feuille","ciseaux"];
+    let bot=options[Math.floor(Math.random()*3)];
+    pfcResult.innerText="Bot : "+bot+" | "+((choice===bot)?"Égalité":(choice==="pierre"&&bot==="ciseaux"||choice==="feuille"&&bot==="pierre"||choice==="ciseaux"&&bot==="feuille")?"Gagné 🎉":"Perdu 😢");
+  }
+</script>
 </body>
 </html>
